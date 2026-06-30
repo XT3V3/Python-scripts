@@ -2,21 +2,21 @@
 """
 Run OLGA genkey files in sequence.
 
-Created by XT3V3, 4 Apr 2022. Cleaned up 22 May 2026 by Claude Code.
+Created by XT3V3, supported by Claude Code.
 
-Add the files you want to simulate to the ``input_files`` list at the bottom of
-the script, then run it. You may list ``.opi`` files, ``.genkey`` files, or a
+Add the files you want to simulate to the "input_files" list at the bottom of
+the script, then run it. You may list ".opi" files, ".genkey" files, or a
 mix of both:
-  - ``.opi``   files are first converted to ``.genkey`` files using opi.exe,
+  - ".opi"   files are first converted to ".genkey" files using opi.exe,
     then the resulting genkey files are run.
-  - ``.genkey`` files are run directly.
+  - ".genkey" files are run directly.
 
 Each simulation's full output is written to "<genkey>.log" (open it in
 Notepad++ and use the Tail plugin to follow along). Each opi conversion's
 output is written to "<opi>.log".
 
 Behaviour:
-  - All listed ``.opi`` files are converted to genkey files first, then every
+  - All listed ".opi" files are converted to genkey files first, then every
     genkey file is run in series.
   - If all OLGA licenses are in use, the script waits and retries until one
     frees up.
