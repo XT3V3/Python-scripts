@@ -185,6 +185,11 @@ if __name__ == "__main__":
             results[filename] = False
 
     # --- Phase 2: run every genkey file in series ---------------------------
+    # If any .opi files were converted above, print a blank line to separate
+    # the conversion output from the simulation output that follows.
+    converted_any = any(genkey != source for genkey, source in genkeys_to_run.items())
+    if converted_any and genkeys_to_run:
+        print()
     for genkey, source in genkeys_to_run.items():
         results[source] = run_olga(genkey)
 
